@@ -16,5 +16,6 @@ export default function Gameshop() {
     useEffect(() =>{
         getGames()
     },[])
+    return <h1>test gameshop</h1>
 
 }

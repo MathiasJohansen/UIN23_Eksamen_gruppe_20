@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Gamecard from "./Gamecard";
 
 export default function Gameshop() {
     

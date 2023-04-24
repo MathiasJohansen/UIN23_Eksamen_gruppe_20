@@ -7,13 +7,13 @@ export default function Dashboard() {
         <>
         
         <section>
-            <Gameshop />
+           
         </section>
         <section>
-            <Mygames/>
+           
         </section>
         <aside>
-            <Myfavourites/>
+            
         </aside>
         </>
     )

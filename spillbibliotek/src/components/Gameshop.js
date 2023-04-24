@@ -4,6 +4,8 @@ import Gamecard from "./Gamecard";
 export default function Gameshop() {
     
     const [printgames, setGame] = useState([])
+    const [gameId, setGameId] = useState([])
+    
     
     
     const getGames = async() => {
@@ -12,6 +14,14 @@ export default function Gameshop() {
 
         const gameInfo = data?.results
         setGame(gameInfo)
+
+        const resultat = gameInfo?.map(info => info?.id)
+
+        const getGameStore = await Promise.all (resultat.map(id =>(
+            fetch (`https://api.rawg.io/api/stores/${id}`)
+        )))
+
+       console.log("getgamestore", getGameStore)
 
        
 
@@ -24,6 +34,21 @@ export default function Gameshop() {
     useEffect(() =>{
         getGames()
     },[])
+
+    {gameId.map((id, index) => {
+        <Gameshop id={id}/>
+    })}
+
+    return (
+        <>
+            <h1>Gameshop</h1>
+            <ul>
+                {printgames?.map((games, index) =>(
+                    <li><Gamecard key={index} title={games?.name} img={games?.background_image} genre={games?.genres}/></li>
+                ))}    
+            </ul>    
+        </>
+        )
 
     
 

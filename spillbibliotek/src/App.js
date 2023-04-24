@@ -1,9 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Layout from './components/Layout';
+import Dashboard from './components/Dashboard';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <Layout
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+    </Layout>
   );
 }
 

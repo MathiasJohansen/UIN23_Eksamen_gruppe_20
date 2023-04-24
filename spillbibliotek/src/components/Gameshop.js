@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Gamecard from "./Gamecard";
 
 export default function Gameshop() {
     
@@ -6,10 +7,11 @@ export default function Gameshop() {
     
     
     const getGames = async() => {
-        const response = await fetch ("https://api.rawg.io/api/platforms?key=d7e8ed9e06e04e6a8be1835df02b3a17")
+        const response = await fetch ("https://api.rawg.io/api/games?key=d7e8ed9e06e04e6a8be1835df02b3a17")
         const data = await response.json()
 
-        setGame(data)
+        const gameInfo = data?.results
+        setGame(gameInfo)
 
         console.log(data, printgames)
         
@@ -17,10 +19,6 @@ export default function Gameshop() {
     useEffect(() =>{
         getGames()
     },[])
-    return <h1>test gameshop</h1>
-
-    
-
     return (
         <>
             <h1>Gameshop</h1>

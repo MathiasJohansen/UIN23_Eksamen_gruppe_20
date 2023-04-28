@@ -20,13 +20,13 @@ export default function Gameshop() {
         getGames()
     },[])
     return (
-        <>
+        <section className="gameshop">
             <h1>Gameshop</h1>
             <ul>
                 {printgames?.map((games, index) =>(
                     <li><Gamecard key={index} title={games?.name} img={games?.background_image} genre={games?.genres}/></li>
                 ))}    
             </ul>    
-        </>
+        </section>
         )
 }

@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: min-content auto max-content;
+  grid-template-areas: "logo . nav";
+  background-color: black;
+  color: white;
+  margin: 0.3rem;
+}
+header h1 {
+  grid-area: logo;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 500px;
+  max-width: auto;
+  align-items: center;
+}
+header h1 a {
+  padding: 0.5rem;
+  color: white;
+}
+header nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  width: 500px;
+  max-width: auto;
+  align-items: left;
+  padding: 0.5rem;
+}
+header nav ul {
+  list-style-type: none;
+}
+header nav ul li {
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  color: white;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: "shop" "library favorites";
+}
+
+.gameshop {
+  margin: 1rem;
+}
+.gameshop h1 {
+  margin-left: 2.4rem;
+}
+.gameshop ul {
+  list-style: none;
+  margin: -1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gameshop ul li {
+  max-width: 300px;
+  border: 2px solid black;
+  margin: 5px;
+  padding: 0.5rem;
+}
+.gameshop ul li img {
+  max-width: 250px;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Gamecard from "./Gamecard";
 
-export default function Myfavourites({ps}) {
+export default function Myfavourites({ ps }) {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function Myfavourites({ps}) {
     if (storedFavourites) {
       setFavourites(storedFavourites);
     }
-  }, []);
+  }, [favourites]);
 
   const removeFromFavourites = (game) => {
     setFavourites((prevFavourites) =>

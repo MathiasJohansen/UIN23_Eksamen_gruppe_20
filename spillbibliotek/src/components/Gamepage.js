@@ -1,4 +1,12 @@
-export default function Gamepage(){
-    
-    return(<h1>test</h1>)
+import { useParams } from "react-router-dom";
+
+export default function Gamepage() {
+
+    const {slug} = useParams();
+
+    console.log("game?", slug)
+
+
+
+  return <h1>{slug.replace(/-/g, " ")}</h1>;
 }

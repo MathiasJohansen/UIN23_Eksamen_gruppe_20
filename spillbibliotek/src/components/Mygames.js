@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import Gamecard from "./Gamecard"
-import Myfavourites from "./Myfavourites"
 
 export default function Mygames(props) {
   const [printgames, setGame] = useState([])
@@ -31,15 +30,13 @@ export default function Mygames(props) {
   
 
   useEffect(() => {
-    getGames(props.ps ?? 20)
-
-    const storedFavourites = localStorage.getItem("favourites")
-    if (storedFavourites) {
-      setFavourites(JSON.parse(storedFavourites))
-    }
+    getGames(props.ps ?? 20) 
   }, [])
+  useEffect(() =>{const storedFavourites = localStorage.getItem("favourites")
+    if (storedFavourites) {
+      setFavourites(JSON.parse(storedFavourites))}
+  }, [favourites])
 
-  console.log("addtofav", favourites)
   return (
     <section className="gameshop">
       <h1>My Games</h1>

@@ -3,9 +3,7 @@ import Gamecard from "./Gamecard";
 
 export default function Gameshop(props) {
     
-    const [printgames, setGame] = useState([])
-    const [favourites, setFavourites] = useState([])
-    
+    const [printgames, setGame] = useState([])   
     
     const getGames = async(ps) => {
 
@@ -22,10 +20,7 @@ export default function Gameshop(props) {
         getGames(props.ps ?? 10)
     },[])
 
-    const addToFavourites = () => {
-        
-        console.log(favourites)
-    }
+   
         
     return (
         <section className="gameshop">
@@ -38,7 +33,9 @@ export default function Gameshop(props) {
                     title={games?.name} 
                     img={games?.background_image} 
                     genre={games?.genres} 
-                    addTo={addToFavourites}/></li>
+                    showFavouritesButton={false}
+                    showBuyButton={true}
+                    /></li>
                 ))}    
             </ul>    
         </section>

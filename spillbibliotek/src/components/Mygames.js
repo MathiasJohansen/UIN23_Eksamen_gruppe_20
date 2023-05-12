@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Gamecard from "./Gamecard";
+import { Link } from "react-router-dom";
 
 export default function Mygames(props) {
   const [printgames, setGame] = useState([])
@@ -38,8 +39,8 @@ export default function Mygames(props) {
   }, [favourites])
 
   return (
-    <section className="games">
-      <h1>My Games</h1>
+    <section className={props.ps == 4 ? "mg" : "gamepage"}>
+      <h2>MY GAMES</h2>
       <ul>
         {printgames?.map((games, index) => (
           <li>
@@ -55,6 +56,11 @@ export default function Mygames(props) {
           </li>
         ))}
       </ul>
+      <button className="redirect">
+          <Link to="/mygames">
+            Go to library
+          </Link>
+        </button>
     </section>
   )
 }

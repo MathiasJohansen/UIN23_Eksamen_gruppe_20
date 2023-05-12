@@ -1,12 +1,16 @@
+@import 'examvariables'; 
 
 *{
     box-sizing: border-box;
 }
 
-
+body{
+    @extend .textfont;
+    font-size: 18px;
+}
 
 #root{
-    margin: 0;
+    margin: -1;
     display: grid;
     grid-template-columns: 1fr ;
     grid-template-rows: auto ;
@@ -18,24 +22,28 @@
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: min-content auto max-content;
+    grid-template-columns: max-content auto max-content;
     grid-template-areas: "logo . nav";
-    background-color: black;
-    color: white;
-    margin: 0.3rem;
+    background-color: $black;
+    color: $white;
+    
+    font-family: $headerfont;
 
     h1 {
         grid-area: logo;
         display: flex;
         flex-direction: row;
         justify-content: left;
-        width: 500px;
-        max-width: auto;
+        max-width: 500px;
+        width: auto;
         align-items: center; 
+        font-family: $headerfont;
+        font-weight: 700;
         
         a{
             padding: 0.5rem;
-            color: white;
+            color: $white;
+            text-decoration: none;
         }
     }
 
@@ -44,19 +52,18 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: right;
-        width: 500px;
-        max-width: auto;
-        align-items: left;
+        max-width: 500px;
+        width: auto;
         padding: 0.5rem;
+        align-items: center;
         ul{
             list-style-type: none;
             
             li {
                 text-align: center;
                 display: inline-block;
-                padding: .5rem;
-                margin-top: .3rem;
-                color: white;
+                padding: 1rem;
+                color: $white;
             }
         }
     }
@@ -67,11 +74,43 @@ main{
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-template-areas: ". shop ."
+    grid-template-areas: ". page ."
                         ". mg-mf .";
 
     .dashboard-shop{
-        grid-area: shop;
+        grid-area: page;
+        margin: 1rem;
+
+            .redirect{
+                font: inherit;
+                margin-left: .5rem;
+                background-color: $black;
+                border-radius: 12px;
+
+                a{
+                    color: $white;  
+                    text-decoration: none;
+                }
+            }
+            ul{
+                list-style: none;
+                margin: -1rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                li{
+                    max-width: 300px;
+                    width: 100%;
+                    border: 2px solid $black;
+                    margin: 5px;
+                    padding: 0.5rem;
+        
+                    img {
+                        max-width: 250px;
+                    }
+                }
+            }
     }
 
     .dashboard-mg-mf{
@@ -79,12 +118,112 @@ main{
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-areas: "mg mf";
+
+        .mg {
+            margin: 1rem;
+            grid-area: mg;
+            display: flex;
+            flex-direction: column;
+            
+            .redirect{
+                font-family: "Mulish";
+                font-weight: 400;
+                font-size: 27px;
+                margin-left: .5rem;
+                background-color: $black;
+                border-radius: 12px;
+                padding: .5rem;
+                max-width: 14rem;
+                width: auto;
+                margin-top: 1rem;
+                a{
+                    
+                    color: $white;  
+                    text-decoration: none;
+                }
+            }
+
+            ul{
+                list-style: none;
+                margin: -1rem;
+                margin-right: 0.5rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                li{
+                    max-width: 300px;
+                    width: 100%;
+                    border: 2px solid $black;
+                    margin: 5px;
+                    padding: 0.5rem;
+        
+                    img {
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
+
+        .mf {
+            margin: 1rem;
+            grid-area: mf;
+            border-left: 3px solid $dark-grey;
+
+            .redirect{
+                font-family: "Mulish";
+                font-weight: 400;
+                font-size: 27px;
+                background-color: $black;
+                border-radius: 12px;
+                margin-left: 1.8rem;
+                padding: .5rem;
+                max-width: 14rem;
+                width: auto;
+                margin-top: 1rem;
+                a{
+                    color: $white;  
+                    text-decoration: none;
+                }
+            }
+
+            h2{
+                margin-left: 1.8rem;
+            }
+            ul{
+                list-style: none;
+                margin: -1rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                li{
+                    max-width: 300px;
+                    width: 100%;
+                    border: 2px solid $black;
+                    margin: 5px;
+                    padding: 0.5rem;
+        
+                    img {
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
     }
 }
 
-.games {
-    margin: 1rem;
 
+
+.gamepage {
+    margin: 1rem;
+    display: grid;
+    grid-area: page;
+
+    .redirect{
+        visibility: hidden;
+        opacity: 0%;
+    }
     h1{
         margin-left: 2.4rem;
     }
@@ -94,11 +233,11 @@ main{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-
+        justify-content: space-evenly;
         li{
             max-width: 300px;
             width: 100%;
-            border: 2px solid black;
+            border: 2px solid $black;
             margin: 5px;
             padding: 0.5rem;
 
@@ -108,6 +247,17 @@ main{
         }
     }
 }
+
+.dashboard-shop-list{
+    background-color: $light-grey;
+    justify-content: space-evenly;
+    li{
+        display: flex;
+        background-color: $white;
+        
+    }
+}
+
 
 footer{
     grid-area: footer;

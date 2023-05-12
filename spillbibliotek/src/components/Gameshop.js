@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Gamecard from "./Gamecard";
+import { Link } from "react-router-dom";
 
 
 
@@ -22,9 +23,16 @@ export default function Gameshop(props) {
   }, []);
 
   return (
-    <section className="games">
-      <h1>Gameshop</h1>
-      <ul>
+    <section className={props.ps == 3 ? "dashboard-shop" : "gamepage"}>
+      <h2>GAMESHOP
+      <button className="redirect">
+          <Link to="/gameshop">
+            Visit shop
+          </Link>
+        </button>
+      </h2>
+      
+      <ul className={props.ps == 3 ? "dashboard-shop-list" : ""}>
         {printgames?.map((games, index) => (
           <li>
             <Gamecard

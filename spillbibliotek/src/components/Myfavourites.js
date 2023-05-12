@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Gamecard from "./Gamecard";
+import { Link } from "react-router-dom";
 
 export default function Myfavourites({ ps }) {
   const [favourites, setFavourites] = useState([]);
@@ -23,8 +24,8 @@ export default function Myfavourites({ ps }) {
   };
 
   return (
-    <section className="games">
-      <h1>My Favourites</h1>
+    <section className={ps == 2 ? "mf" : "gamepage"}>
+      <h2>MY FAVOURITES</h2>
       <ul>
         {favourites.slice(0, ps).map((favourite, index) => (
           <li key={index}>
@@ -38,6 +39,11 @@ export default function Myfavourites({ ps }) {
           </li>
         ))}
       </ul>
+      <button className="redirect">
+          <Link to="/myfavourites">
+            Go to Favourites
+          </Link>
+        </button>
     </section>
   );
 }

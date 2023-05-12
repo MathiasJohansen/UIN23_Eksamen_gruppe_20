@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Gamecard from "./Gamecard";
 
+
+
 export default function Gameshop(props) {
   const [printgames, setGame] = useState([]);
 
@@ -20,7 +22,7 @@ export default function Gameshop(props) {
   }, []);
 
   return (
-    <section className="gameshop">
+    <section className="games">
       <h1>Gameshop</h1>
       <ul>
         {printgames?.map((games, index) => (

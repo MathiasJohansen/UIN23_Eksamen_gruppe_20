@@ -23,7 +23,7 @@ export default function Myfavourites({ ps }) {
   };
 
   return (
-    <section className="gameshop">
+    <section className="games">
       <h1>My Favourites</h1>
       <ul>
         {favourites.slice(0, ps).map((favourite, index) => (

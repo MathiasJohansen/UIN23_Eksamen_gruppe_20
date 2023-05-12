@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import Gamecard from "./Gamecard"
+import { useEffect, useState } from "react";
+import Gamecard from "./Gamecard";
 
 export default function Mygames(props) {
   const [printgames, setGame] = useState([])
@@ -38,7 +38,7 @@ export default function Mygames(props) {
   }, [favourites])
 
   return (
-    <section className="gameshop">
+    <section className="games">
       <h1>My Games</h1>
       <ul>
         {printgames?.map((games, index) => (

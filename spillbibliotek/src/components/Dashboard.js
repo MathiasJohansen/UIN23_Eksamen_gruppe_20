@@ -6,7 +6,7 @@ import Myfavourites from "./Myfavourites";
 export default function Dashboard() {
   return (
     <>
-      <section>
+      <section className="dashboard-shop">
         <Gameshop ps={3} />
         <button>
           <Link to="/gameshop">
@@ -15,23 +15,26 @@ export default function Dashboard() {
         </button>
       </section>
 
-      <section>
+      <section className="dashboard-mg-mf">
+        <div className="dashboard-mg">
         <Mygames ps={4} />
         <button>
           <Link to="/mygames">
             <li>Visit My Games</li>
           </Link>
         </button>
-      </section>
-      
-      <aside>
+        </div>
+        <div className="dashboard-mf">
         <Myfavourites ps={2} />
         <button>
           <Link to="/myfavourites">
             <li>Visit My Favourites</li>
           </Link>
         </button>
-      </aside>
+      </div>
+      </section>
+      
+      
     </>
   );
 }

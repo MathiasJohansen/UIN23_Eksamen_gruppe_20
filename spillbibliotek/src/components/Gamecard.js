@@ -11,6 +11,7 @@ export default function Gamecard({
   removeFromFavourites,
   showRemoveButton,
 }) {
+
   return (
     <article className="game-card">
       <h3>{title}</h3>
@@ -19,13 +20,13 @@ export default function Gamecard({
         <p>{g?.name}</p>
       ))}
       <p>
-        <Link to={`/gamepage/${title.toLowerCase().replace(/ /g, "-")}`}>
+        <Link to={`/gamepage/${title.toLowerCase().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "").replace(/ /g, "-")}`}>
           Les mer
         </Link>
       </p>
       {showBuyButton && (
         <button>
-          <Link to={id}>Kjøp</Link>
+          <Link to={id}>Buy</Link>
         </button>
       )}
       {showFavouritesButton && (

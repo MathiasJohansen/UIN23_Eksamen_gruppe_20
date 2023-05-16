@@ -61,6 +61,7 @@ header h1 {
   align-items: center;
   font-family: "Kanit", sans-serif;
   font-weight: 700;
+  margin-left: 1rem;
 }
 header h1 a {
   padding: 0.5rem;
@@ -267,10 +268,18 @@ main .dashboard-mg-mf .mf ul li img {
 }
 
 .game-info {
-  display: flex;
-  flex-direction: row;
+  grid-area: page;
   padding: 1rem;
-  max-width: 10rem;
+  margin-bottom: 5rem;
+}
+.game-info p {
+  max-width: 65%;
+}
+.game-info aside {
+  float: right;
+}
+.game-info aside img {
+  max-width: 500px;
   width: 100%;
 }
 

@@ -16,11 +16,37 @@ export default function Gameshop(props) {
     const gameInfo = data?.results;
     setGame(gameInfo);
 
-    console.log(gameInfo);
+    console.log("hmmm",printgames);
   };
   useEffect(() => {
     getGames(props.ps ?? 10);
   }, []);
+
+  const [printstore, setStore] = useState([])
+
+  const getStore = async () => {
+
+    const gamesearch = printgames.map((items => items?.id))
+
+    const gameIds = await Promise.all(gamesearch.map(id => (
+      fetch(`https://api.rawg.io/api/games/${id}/stores?&key=d7e8ed9e06e04e6a8be1835df02b3a17`)
+  )))
+
+  const storelinks = await Promise.all(gameIds.map(gameresponse => (
+      gameresponse.json()
+  )))
+    const storelinksresult = storelinks.map((items => items?.results))
+    
+
+    setStore(storelinksresult)
+console.log("data store", storelinks)
+    
+    console.log("test store", printstore)
+    
+  }
+  useEffect(() => {
+    getStore() 
+  }, [])
 
   return (
     <section className={props.ps == 3 ? "dashboard-shop" : "gamepage"}>

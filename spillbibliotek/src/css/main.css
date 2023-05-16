@@ -66,6 +66,15 @@ header h1 a {
   padding: 0.5rem;
   color: #ffffff;
   text-decoration: none;
+  transition: none;
+}
+header h1:hover {
+  text-decoration: underline;
+  color: #FFA100;
+}
+header h1:hover a:hover {
+  text-align: underline;
+  color: #FFA100;
 }
 header nav {
   grid-area: nav;
@@ -85,6 +94,10 @@ header nav ul li {
   display: inline-block;
   padding: 1rem;
   color: #ffffff;
+}
+header nav ul li:hover {
+  color: #FFA100;
+  text-decoration: underline;
 }
 
 main {
@@ -107,6 +120,18 @@ main .dashboard-shop .redirect {
 main .dashboard-shop .redirect a {
   color: #ffffff;
   text-decoration: none;
+  transition: none;
+}
+main .dashboard-shop .redirect :hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
+  transition: none;
+}
+main .dashboard-shop .redirect:hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
 }
 main .dashboard-shop ul {
   list-style: none;
@@ -131,6 +156,7 @@ main .dashboard-mg-mf {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas: "mg mf";
+  margin-bottom: 4rem;
 }
 main .dashboard-mg-mf .mg {
   margin: 1rem;
@@ -153,6 +179,18 @@ main .dashboard-mg-mf .mg .redirect {
 main .dashboard-mg-mf .mg .redirect a {
   color: #ffffff;
   text-decoration: none;
+  transition: none;
+}
+main .dashboard-mg-mf .mg .redirect :hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
+  transition: none;
+}
+main .dashboard-mg-mf .mg .redirect:hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
 }
 main .dashboard-mg-mf .mg ul {
   list-style: none;
@@ -193,6 +231,18 @@ main .dashboard-mg-mf .mf .redirect {
 main .dashboard-mg-mf .mf .redirect a {
   color: #ffffff;
   text-decoration: none;
+  transition: none;
+}
+main .dashboard-mg-mf .mf .redirect :hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
+  transition: none;
+}
+main .dashboard-mg-mf .mf .redirect:hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
 }
 main .dashboard-mg-mf .mf h2 {
   margin-left: 1.8rem;
@@ -216,10 +266,45 @@ main .dashboard-mg-mf .mf ul li img {
   max-width: 250px;
 }
 
+.game-info {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  max-width: 10rem;
+  width: 100%;
+}
+
+.game-card button {
+  font: inherit;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #000000;
+  border-radius: 12px;
+  padding: 0.2rem;
+  transition: none;
+}
+.game-card button a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: none;
+}
+.game-card button :hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
+  transition: none;
+}
+.game-card button:hover {
+  text-decoration: underline;
+  color: #000000;
+  background-color: #FFA100;
+}
+
 .gamepage {
   margin: 1rem;
   display: grid;
   grid-area: page;
+  margin-bottom: 5rem;
 }
 .gamepage .redirect {
   visibility: hidden;
@@ -258,6 +343,14 @@ main .dashboard-mg-mf .mf ul li img {
 
 footer {
   grid-area: footer;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=main.css.map */

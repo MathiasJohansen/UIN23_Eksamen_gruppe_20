@@ -7,6 +7,7 @@
 body{
     @extend .textfont;
     font-size: 18px;
+    
 }
 
 #root{
@@ -28,7 +29,7 @@ header {
     color: $white;
     
     font-family: $headerfont;
-
+    
     h1 {
         grid-area: logo;
         display: flex;
@@ -44,7 +45,18 @@ header {
             padding: 0.5rem;
             color: $white;
             text-decoration: none;
+            transition: none;
         }
+        
+        
+    }
+    h1:hover{
+        text-decoration: underline;
+        color: $orange;
+        a:hover{
+            text-align: underline;
+            color: $orange;
+            }
     }
 
     nav {
@@ -59,11 +71,15 @@ header {
         ul{
             list-style-type: none;
             
-            li {
+            li{
                 text-align: center;
                 display: inline-block;
                 padding: 1rem;
                 color: $white;
+            }
+            li:hover{
+                color: $orange; 
+                text-decoration: underline;
             }
         }
     }
@@ -90,8 +106,21 @@ main{
                 a{
                     color: $white;  
                     text-decoration: none;
+                    transition: none;
+                }
+                :hover{
+                    text-decoration: underline;
+                    color: $black;
+                    background-color: $orange;
+                    transition: none;
                 }
             }
+            .redirect:hover{
+                text-decoration: underline;
+                color: $black;
+                background-color: $orange;
+            } 
+
             ul{
                 list-style: none;
                 margin: -1rem;
@@ -118,6 +147,7 @@ main{
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-areas: "mg mf";
+        margin-bottom: 4rem;
 
         .mg {
             margin: 1rem;
@@ -140,8 +170,20 @@ main{
                     
                     color: $white;  
                     text-decoration: none;
+                    transition: none;
+                }
+                :hover{
+                    text-decoration: underline;
+                    color: $black;
+                    background-color: $orange;
+                    transition: none;
                 }
             }
+            .redirect:hover{
+                text-decoration: underline;
+                color: $black;
+                background-color: $orange;
+            } 
 
             ul{
                 list-style: none;
@@ -184,8 +226,20 @@ main{
                 a{
                     color: $white;  
                     text-decoration: none;
+                    transition: none;
+                }
+                :hover{
+                    text-decoration: underline;
+                    color: $black;
+                    background-color: $orange;
+                    transition: none;
                 }
             }
+            .redirect:hover{
+                text-decoration: underline;
+                color: $black;
+                background-color: $orange;
+            } 
 
             h2{
                 margin-left: 1.8rem;
@@ -212,14 +266,48 @@ main{
         }
     }
 }
+.game-info{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    max-width: 10rem;
+    width: 100%;
+}
 
 
+.game-card{
+    button{
+        font: inherit;
+        color: $white;  
+        text-decoration: none;
+        background-color: $black;
+        border-radius: 12px;
+        padding: .2rem;
+        transition: none;
+        a{
+            color: $white;  
+            text-decoration: none;
+            transition: none;
+            }
+            :hover{
+                text-decoration: underline;
+                color: $black;
+                background-color: $orange;
+                transition: none;
+            }
+    }
+    button:hover{
+        text-decoration: underline;
+        color: $black;
+        background-color: $orange;
+    } 
+}
 
 .gamepage {
     margin: 1rem;
     display: grid;
     grid-area: page;
-
+    margin-bottom: 5rem;
     .redirect{
         visibility: hidden;
         opacity: 0%;
@@ -261,4 +349,14 @@ main{
 
 footer{
     grid-area: footer;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: center;
+   
+    
 }

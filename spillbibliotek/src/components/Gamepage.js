@@ -8,5 +8,10 @@ export default function Gamepage() {
 
 
 
-  return <h1>{slug.replace(/-/g, " ")}</h1>;
+  return (
+    <article className="game-info">
+      <h1>{slug.replace(/-/g, " ")}</h1>
+
+    </article>
+  )
 }

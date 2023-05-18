@@ -10,23 +10,23 @@ export default function Gamecard({
   showBuyButton,
   removeFromFavourites,
   showRemoveButton,
+  buyButton
 }) {
-
   return (
     <article className="game-card">
       <h3>{title}</h3>
-      <img src={img} alt={"Picture from "+title} />
+      <img src={img} alt={title} />
       {genre?.map((g) => (
         <p>{g?.name}</p>
       ))}
       <p>
-        <Link to={`/gamepage/${title.toLowerCase().replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, "").replace(/ /g, "-")}`}>
+        <Link to={`/gamepage/${title.toLowerCase().replace(/ /g, "-")}`}>
           Les mer
         </Link>
       </p>
       {showBuyButton && (
         <button>
-          <Link to={id}>Buy</Link>
+          <Link to={buyButton}>Kjøp</Link>
         </button>
       )}
       {showFavouritesButton && (

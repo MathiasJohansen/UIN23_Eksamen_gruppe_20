@@ -48,13 +48,13 @@ console.log(currentDate)
   const storelinks = await Promise.all(gameIds.map(gameresponse => (
       gameresponse.json()
   )))
-    const storelinksresult = storelinks.map((items => items?.results))
+    const storelinksresult = storelinks.map((items => items?.results?.[0]?.url))
     
 
     setStore(storelinksresult)
 
     console.log("data store", storelinks)
-    
+  
     console.log("test store", printstore)
   }
   useEffect(() => {
@@ -81,6 +81,7 @@ console.log(currentDate)
               genre={games?.genres}
               showFavouritesButton={false}
               showBuyButton={true}
+              buyButton={printstore[index]}
             />
           </li>
         ))}

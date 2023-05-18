@@ -36,10 +36,10 @@ export default function Mygames(props) {
   useEffect(() =>{const storedFavourites = localStorage.getItem("favourites")
     if (storedFavourites) {
       setFavourites(JSON.parse(storedFavourites))}
-  }, [favourites])
+  }, [])
 
   return (
-    <section className={props.ps === 4 ? "mg" : "gamepage"}>
+    <section className={props.ps == 4 ? "mg" : "gamepage"}>
       <h2>MY GAMES</h2>
       <ul>
         {printgames?.map((games, index) => (

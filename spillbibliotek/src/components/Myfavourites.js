@@ -10,7 +10,7 @@ export default function Myfavourites({ ps }) {
     if (storedFavourites) {
       setFavourites(storedFavourites);
     }
-  }, [favourites]);
+  }, []);
 
   const removeFromFavourites = (game) => {
     setFavourites((prevFavourites) =>

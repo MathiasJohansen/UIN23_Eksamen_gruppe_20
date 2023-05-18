@@ -27,7 +27,7 @@ export default function Gamecard({
           <Link to={buyButton}>Buy</Link>
         </button>
       )}
-      {/*Brukt conditional operators på en måte som til vår kunnskap ikke har blitt vist i undervisning. bedre detaljert logic AND Operator. Brukt for å sjekke om verdien er sann eller ikke*/}
+      {/*Brukt conditional operators på en måte som til vår kunnskap ikke har blitt vist i undervisning. bedre detaljert logic AND Operator. Brukt for å sjekke om verdien er sann eller ikke. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND */}
       {showFavouritesButton && (
         <button onClick={addToFavourites}>Add to favourites</button>
       )}

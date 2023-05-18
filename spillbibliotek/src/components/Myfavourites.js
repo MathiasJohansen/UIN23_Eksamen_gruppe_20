@@ -6,7 +6,8 @@ export default function Myfavourites({ ps }) {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
-    //Brukt localStorage med .parse og .stringify for å lagre artikkelkort som en streng og så som en array for lagring i localStorage og så i favoritter. brukt i kose fra linje 10-22.
+    //Brukt localStorage med .parse og .stringify for å lagre artikkelkort som en streng og så som en array for lagring i localStorage og så i favoritter. brukt i kose fra linje 10-22. https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify, 
+
     const storedFavourites = JSON.parse(localStorage.getItem("favourites"));
     if (storedFavourites) {
       setFavourites(storedFavourites);

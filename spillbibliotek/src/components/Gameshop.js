@@ -22,7 +22,7 @@ console.log(currentDate)
 
   const getGames = async (ps) => {
     const response = await fetch(
-      `https://api.rawg.io/api/games?page_size=${ps}&dates=2023-01-01,2023-05-18&key=d7e8ed9e06e04e6a8be1835df02b3a17`
+      `https://api.rawg.io/api/games?ordering=-released&page_size=${ps}&dates=2023-01-01,${currentDate}&key=d7e8ed9e06e04e6a8be1835df02b3a17`
     );
     const data = await response.json();
 
@@ -56,6 +56,7 @@ console.log(currentDate)
     console.log("data store", storelinks)
   
     console.log("test store", printstore)
+
   }
   useEffect(() => {
     getStore() 

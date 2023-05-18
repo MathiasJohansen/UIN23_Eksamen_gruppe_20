@@ -10,7 +10,8 @@ export default function Gamecard({
   showBuyButton,
   removeFromFavourites,
   showRemoveButton,
-  buyButton
+  buyButton,
+  slug
 }) {
   return (
     <article className="game-card">
@@ -20,7 +21,7 @@ export default function Gamecard({
         <p>{g?.name}</p>
       ))}
       <p>
-        <Link to={`/gamepage/${title.toLowerCase().replace(/ /g, "-")}`}>
+        <Link to={`/gamepage/${slug}`}>
           Les mer
         </Link>
       </p>

@@ -13,6 +13,7 @@ export default function Mygames(props) {
     const data = await response.json();
     const gameInfo = data?.results;
     setGame(gameInfo);
+    console.log(favourites)
   };
 
   const addToFavourites = (gameInfo) => {
@@ -45,11 +46,11 @@ export default function Mygames(props) {
   }, []);
 
   return (
-    <section className={props.ps == 4 ? "mg" : "gamepage"}>
+    <section className={props.ps === 4 ? "mg" : "gamepage"}>
       <h2>MY GAMES</h2>
       <ul>
         {printgames?.map((games, index) => (
-          <li>
+          <li key={games?.id}>
             <Gamecard
               key={index}
               title={games?.name}

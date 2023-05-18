@@ -66,10 +66,10 @@ export default function Gameshop(props) {
 
       <ul className={props.ps === 3 ? "dashboard-shop-list" : ""}>
         {printgames?.map((games, index) => (
-          <li>
+          <li key={games?.id}>
             <Gamecard
-              key={index}
               title={games?.name}
+              slug={games?.slug}
               img={games?.background_image}
               genre={games?.genres}
               showFavouritesButton={false}

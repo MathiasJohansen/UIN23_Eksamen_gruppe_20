@@ -13,7 +13,7 @@ export default function Myfavourites({ ps }) {
     }
   }, []);
 
-  const removeFromFavourites = (game) => {
+  const removeFromFavourites = async(game) => {
     setFavourites((prevFavourites) =>
       prevFavourites.filter((favourite) => favourite.id !== game.id)
     );

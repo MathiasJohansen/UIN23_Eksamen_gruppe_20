@@ -17,7 +17,7 @@ export default function Gamecard({
       <h3>{title}</h3>
       <img src={img} alt={title} />
       {genre?.map((g) => (
-        <p>{g?.name}</p>
+        <p key={g.id}>{g?.name}</p>
       ))}
       <p>
         <Link to={`/gamepage/${slug}`}>Read more</Link>

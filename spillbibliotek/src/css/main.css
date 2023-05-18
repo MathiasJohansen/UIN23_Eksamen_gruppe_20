@@ -117,6 +117,7 @@ main .dashboard-shop .redirect {
   margin-left: 0.5rem;
   background-color: #000000;
   border-radius: 12px;
+  padding: 0.3rem;
 }
 main .dashboard-shop .redirect a {
   color: #ffffff;
@@ -295,7 +296,7 @@ main .dashboard-mg-mf .mf ul li img {
   text-decoration: none;
   background-color: #000000;
   border-radius: 12px;
-  padding: 0.2rem;
+  padding: 0.5rem;
   transition: none;
 }
 .game-card button a {
@@ -367,6 +368,14 @@ footer {
   display: flex;
   justify-content: center;
 }
+footer a {
+  color: #FFA100;
+  transition: none;
+}
+footer a:hover {
+  transition: none;
+  color: #6ea100;
+}
 
 @media (max-width: 800px) {
   header {
@@ -401,7 +410,6 @@ footer {
     text-align: none;
     display: inline-block;
     padding: 1rem;
-    color: #ffffff;
   }
   main {
     grid-area: main;
@@ -416,22 +424,7 @@ footer {
     margin-bottom: 1rem;
   }
   main .dashboard-shop ul {
-    list-style: none;
     margin: -1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  main .dashboard-shop ul li {
-    max-width: 300px;
-    width: 100%;
-    border: 2px solid #000000;
-    margin: 5px;
-    padding: 0.5rem;
-  }
-  main .dashboard-shop ul li img {
-    max-width: 250px;
   }
   main .dashboard-mg-mf {
     grid-area: mg-mf;
@@ -459,18 +452,9 @@ footer {
     margin-right: 0;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
   main .dashboard-mg-mf .mg ul li {
-    max-width: 300px;
-    width: 100%;
-    border: 2px solid #000000;
-    margin: 5px;
     padding: 0.5rem;
-  }
-  main .dashboard-mg-mf .mg ul li img {
-    max-width: 250px;
   }
   main .dashboard-mg-mf .mf {
     margin: 0;
@@ -487,22 +471,7 @@ footer {
     margin-left: 0;
   }
   main .dashboard-mg-mf .mf ul {
-    list-style: none;
     margin: -1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  main .dashboard-mg-mf .mf ul li {
-    max-width: 300px;
-    width: 100%;
-    border: 2px solid #000000;
-    margin: 5px;
-    padding: 0.5rem;
-  }
-  main .dashboard-mg-mf .mf ul li img {
-    max-width: 250px;
   }
   .game-info {
     grid-area: page;

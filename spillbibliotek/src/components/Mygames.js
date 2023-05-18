@@ -39,7 +39,7 @@ export default function Mygames(props) {
   }, [favourites])
 
   return (
-    <section className={props.ps == 4 ? "mg" : "gamepage"}>
+    <section className={props.ps === 4 ? "mg" : "gamepage"}>
       <h2>MY GAMES</h2>
       <ul>
         {printgames?.map((games, index) => (

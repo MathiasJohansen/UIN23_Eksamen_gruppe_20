@@ -49,7 +49,7 @@ console.log("data store", storelinks)
   }, [])
 
   return (
-    <section className={props.ps == 3 ? "dashboard-shop" : "gamepage"}>
+    <section className={props.ps === 3 ? "dashboard-shop" : "gamepage"}>
       <h2>GAMESHOP
       <button className="redirect">
           <Link to="/gameshop">
@@ -58,7 +58,7 @@ console.log("data store", storelinks)
         </button>
       </h2>
       
-      <ul className={props.ps == 3 ? "dashboard-shop-list" : ""}>
+      <ul className={props.ps === 3 ? "dashboard-shop-list" : ""}>
         {printgames?.map((games, index) => (
           <li>
             <Gamecard

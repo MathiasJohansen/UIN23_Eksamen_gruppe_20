@@ -24,7 +24,7 @@ export default function Myfavourites({ ps }) {
   };
 
   return (
-    <section className={ps == 2 ? "mf" : "gamepage"}>
+    <section className={ps <= 2 ? "mf" : "gamepage"}>
       <h2>MY FAVOURITES</h2>
       <ul>
         {favourites.slice(0, ps).map((favourite, index) => (

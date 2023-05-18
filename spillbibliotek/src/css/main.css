@@ -362,4 +362,157 @@ footer {
   justify-content: center;
 }
 
+@media (max-width: 800px) {
+  header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "logo" "nav";
+  }
+  header h1 {
+    grid-area: logo;
+    justify-content: center;
+    max-width: none;
+    width: auto;
+    align-items: none;
+  }
+  header h1 a {
+    padding: 0;
+  }
+  header nav {
+    grid-area: nav;
+    justify-content: center;
+    max-width: none;
+    width: auto;
+    padding: 0;
+    align-items: none;
+  }
+  header nav ul {
+    list-style-type: none;
+  }
+  header nav ul li {
+    text-align: none;
+    display: inline-block;
+    padding: 1rem;
+    color: #ffffff;
+  }
+  main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 16fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: ". page ." ". mg-mf .";
+  }
+  main .dashboard-shop {
+    grid-area: page;
+    margin: 0rem;
+    margin-bottom: 1rem;
+  }
+  main .dashboard-shop ul {
+    list-style: none;
+    margin: -1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  main .dashboard-shop ul li {
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin: 5px;
+    padding: 0.5rem;
+  }
+  main .dashboard-shop ul li img {
+    max-width: 250px;
+  }
+  main .dashboard-mg-mf {
+    grid-area: mg-mf;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "mg" "mf";
+    margin-bottom: 4rem;
+  }
+  main .dashboard-mg-mf .mg {
+    margin: 0;
+    margin-bottom: 1rem;
+    grid-area: mg;
+    display: flex;
+    flex-direction: column;
+  }
+  main .dashboard-mg-mf .mg .redirect {
+    margin-left: 0.5rem;
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+  main .dashboard-mg-mf .mg ul {
+    list-style: none;
+    margin: -1rem;
+    margin-right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main .dashboard-mg-mf .mg ul li {
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin: 5px;
+    padding: 0.5rem;
+  }
+  main .dashboard-mg-mf .mg ul li img {
+    max-width: 250px;
+  }
+  main .dashboard-mg-mf .mf {
+    margin: 0;
+    margin-bottom: 1rem;
+    grid-area: mf;
+    border-left: none;
+  }
+  main .dashboard-mg-mf .mf .redirect {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+  main .dashboard-mg-mf .mf h2 {
+    margin-left: 0;
+  }
+  main .dashboard-mg-mf .mf ul {
+    list-style: none;
+    margin: -1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main .dashboard-mg-mf .mf ul li {
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin: 5px;
+    padding: 0.5rem;
+  }
+  main .dashboard-mg-mf .mf ul li img {
+    max-width: 250px;
+  }
+  .game-info {
+    grid-area: page;
+    padding: 1rem;
+    margin-bottom: 5rem;
+  }
+  .game-info p {
+    max-width: 100%;
+  }
+  .game-info aside {
+    float: none;
+  }
+  .game-info aside img {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

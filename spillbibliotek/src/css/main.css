@@ -282,6 +282,12 @@ main .dashboard-mg-mf .mf ul li img {
   max-width: 500px;
   width: 100%;
 }
+.game-info .game-info-lists {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 55%;
+}
 
 .game-card button {
   font: inherit;

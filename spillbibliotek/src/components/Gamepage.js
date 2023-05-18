@@ -16,8 +16,7 @@ export default function Gamepage() {
       const data = await response.json()
       const gameInfo = data
       setGame(gameInfo)
-
-      
+     
       console.log("slug spill", printgame)
     }
     useEffect(() => {
@@ -27,21 +26,40 @@ export default function Gamepage() {
   return (
     <article className="game-info">
       <h2>{printgame.name}</h2>
-      <p>Publishers</p>
-      <aside>
-        <img src={printgame.background_image} />
-      </aside>
-      <p>{printgame.description_raw}</p>
       
-      <ul>
-        <h3>
-          Platforms
-        </h3>
-        {printgame?.platforms?.map((p, index)=>(
-          <li key={index}>{p?.platform?.name}</li>
-        ))}
-      </ul>
+      <aside>
+        <img src={printgame.background_image === null ? "https://cdn.pixabay.com/photo/2016/11/03/14/18/stamp-1794352_960_720.png" : printgame.background_image} alt={"Picture from "+printgame.name} />
+      </aside>
+      
+      <p>{printgame.description_raw}</p>
+
+      <section className="game-info-lists">
+        <ul >
+          <h3>Info</h3>
+        {printgame?.publishers?.map((p, index)=>(
+            <li key={index}><b>Publisher</b>: {p?.name}</li>
+          ))}
+          <li><b>Release date</b>: {printgame.released}</li>
+          <li><b>Website link</b>: <a href={printgame.website}>{printgame.website}</a></li>
+        </ul>
+
+        <ul >
+          <h3>
+            Platforms
+          </h3>
+          {printgame?.parent_platforms?.map((pp, index)=>(
+            <li key={index}>{pp?.platform?.name}</li>
+          ))}
+        </ul>
+        
+        <ul >
+          <h3>Genres</h3>
+        {printgame?.genres?.map((g, index)=>(
+            <li key={index}>{g?.name}</li>
+          ))}
+        </ul>
+      </section>
     </article>
   )
 }
-//<h1>{slug.replace(/-/g, " ")}</h1>
+

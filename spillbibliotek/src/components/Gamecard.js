@@ -15,7 +15,7 @@ export default function Gamecard({
   return (
     <article className="game-card">
       <h3>{title}</h3>
-      <img src={img} alt={title} />
+      <img src={img} alt={"Picture from "+title} />
       {genre?.map((g) => (
         <p>{g?.name}</p>
       ))}

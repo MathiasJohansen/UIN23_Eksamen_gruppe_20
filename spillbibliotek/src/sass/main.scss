@@ -282,6 +282,12 @@ main{
            
         }
     }
+    .game-info-lists{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 55%;
+    }
 }
 
 
@@ -345,6 +351,7 @@ main{
         }
     }
 }
+
 
 .dashboard-shop-list{
     background-color: $light-grey;

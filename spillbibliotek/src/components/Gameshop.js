@@ -7,9 +7,22 @@ import { Link } from "react-router-dom";
 export default function Gameshop(props) {
   const [printgames, setGame] = useState([]);
 
+
+  const date = new Date();
+
+let currentDay= String(date.getDate()).padStart(2, '0');
+
+let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+
+let currentYear = date.getFullYear();
+
+let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+
+console.log(currentDate)
+
   const getGames = async (ps) => {
     const response = await fetch(
-      `https://api.rawg.io/api/games?page_size=${ps}&key=d7e8ed9e06e04e6a8be1835df02b3a17`
+      `https://api.rawg.io/api/games?page_size=${ps}&dates=2023-01-01,2023-05-18&key=d7e8ed9e06e04e6a8be1835df02b3a17`
     );
     const data = await response.json();
 
@@ -39,10 +52,10 @@ export default function Gameshop(props) {
     
 
     setStore(storelinksresult)
-console.log("data store", storelinks)
+
+    console.log("data store", storelinks)
     
     console.log("test store", printstore)
-    
   }
   useEffect(() => {
     getStore() 

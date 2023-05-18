@@ -53,6 +53,7 @@ export default function Mygames(props) {
           <li key={games?.id}>
             <Gamecard
               key={index}
+              slug={games?.slug}
               title={games?.name}
               img={games?.background_image}
               genre={games?.genres}

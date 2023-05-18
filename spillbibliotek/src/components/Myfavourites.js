@@ -33,6 +33,7 @@ export default function Myfavourites({ ps }) {
           <li key={index}>
             <Gamecard
               title={favourite?.name}
+              slug={favourite?.slug}
               img={favourite?.background_image}
               genre={favourite?.genres}
               showRemoveButton={true}

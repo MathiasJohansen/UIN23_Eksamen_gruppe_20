@@ -6,6 +6,7 @@ export default function Myfavourites({ ps }) {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
+    //Brukt localStorage med .parse og .stringify for å lagre artikkelkort som en streng og så som en array for lagring i localStorage og så i favoritter. brukt i kose fra linje 10-22.
     const storedFavourites = JSON.parse(localStorage.getItem("favourites"));
     if (storedFavourites) {
       setFavourites(storedFavourites);
@@ -40,10 +41,8 @@ export default function Myfavourites({ ps }) {
         ))}
       </ul>
       <button className="redirect">
-          <Link to="/myfavourites">
-            Go to Favourites
-          </Link>
-        </button>
+        <Link to="/myfavourites">Go to Favourites</Link>
+      </button>
     </section>
   );
 }

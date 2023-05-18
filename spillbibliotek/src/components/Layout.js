@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <footer>
         <p>
-          Info hentet fra <a href="https://rawg.io/">https://rawg.io/</a>
+          Used RAWG as a source for data and API: <a href="https://rawg.io/">https://rawg.io/</a>
         </p>
       </footer>
     </>

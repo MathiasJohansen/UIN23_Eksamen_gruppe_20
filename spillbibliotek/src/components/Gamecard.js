@@ -4,14 +4,13 @@ export default function Gamecard({
   title,
   img,
   genre,
-  id,
   addToFavourites,
   showFavouritesButton,
   showBuyButton,
   removeFromFavourites,
   showRemoveButton,
   buyButton,
-  slug
+  slug,
 }) {
   return (
     <article className="game-card">
@@ -21,20 +20,19 @@ export default function Gamecard({
         <p>{g?.name}</p>
       ))}
       <p>
-        <Link to={`/gamepage/${slug}`}>
-          Les mer
-        </Link>
+        <Link to={`/gamepage/${slug}`}>Read more</Link>
       </p>
       {showBuyButton && (
         <button>
-          <Link to={buyButton}>Kjøp</Link>
+          <Link to={buyButton}>Buy</Link>
         </button>
       )}
+      {/*Brukt conditional operators på en måte som til vår kunnskap ikke har blitt vist i undervisning. bedre detaljert logic AND Operator. Brukt for å sjekke om verdien er sann eller ikke*/}
       {showFavouritesButton && (
-        <button onClick={addToFavourites}>Legg til i favoritter</button>
+        <button onClick={addToFavourites}>Add to favourites</button>
       )}
       {showRemoveButton && (
-        <button onClick={removeFromFavourites}>Fjern fra favoritter</button>
+        <button onClick={removeFromFavourites}>Remove from favourites</button>
       )}
     </article>
   );

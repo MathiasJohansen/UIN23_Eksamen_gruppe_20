@@ -13,7 +13,6 @@ export default function Navbar() {
         <Link to="/myfavourites">
           <li>Favourites</li>
         </Link>
-        
       </ul>
     </nav>
   );

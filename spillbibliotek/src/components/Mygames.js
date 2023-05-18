@@ -18,7 +18,7 @@ export default function Mygames(props) {
 
   const addToFavourites = (gameInfo) => {
     setFavourites((prevFavourites) => {
-      //Bruker .find for å finne riktig element i arrayen i forhold til hva vi vil ha.
+      //Bruker .find for å finne riktig element i arrayen i forhold til hva vi vil ha. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
       const existingFavourite = prevFavourites.find(
         (fav) => fav.id === gameInfo.id
       );

@@ -7,7 +7,8 @@ export default function Gameshop(props) {
 
   const date = new Date();
 
-  //Funnet på scaler.com. brukt for å finne nyeste utgivelser fra APIet.
+  //Funnet på scaler.com. brukt for å finne nyeste utgivelser fra APIet. https://www.scaler.com/topics/get-current-date-in-javascript/
+
   let currentDay = String(date.getDate()).padStart(2, "0");
 
   let currentMonth = String(date.getMonth() + 1).padStart(2, "0");
